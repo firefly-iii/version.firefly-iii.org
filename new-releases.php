@@ -44,6 +44,7 @@ updateWebsite($information);
 function updateWebsite(array $information): void
 {
     global $log;
+    $log->debug('Updating website.');
     $replacementKeys = [
         'firefly-iii'   => 'firefly_iii',
         'data-importer' => 'data',
@@ -54,7 +55,7 @@ function updateWebsite(array $information): void
     ];
     $result = [];
     foreach ($information as $key => $entries) {
-
+        $log->debug(sprintf('Now processing %s', $key));
         // fallback versions
         $stable = [
             'version'     => null,
@@ -87,6 +88,7 @@ function updateWebsite(array $information): void
         ];
         $replacementKey = $replacementKeys[$key];
         foreach ($entries as $release) {
+            $log->debug(sprintf('Now processing %s, version %s', $key, $release['title']));
             $isAlpha = str_contains($release['title'], 'alpha');
             $isBeta  = str_contains($release['title'], 'beta');
             // find stable release in array:
