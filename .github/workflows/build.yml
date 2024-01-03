@@ -34,21 +34,17 @@ jobs:
 
       - name: Run script
         run: |
-          pwd
-          ls -lah
           php new-releases.php
         env:
           MASTODON_URL: ${{ secrets.MASTODON_URL }}
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
       - name: "Commit new file(s) to this repository"
         run: |
-          pwd
-          ls -lah
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add cache/releases.json
           git add site/index.json
-          git commit -m "Auto-update for new version"
+          git commit -m "Auto-update for new version" || true
           git push || true
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
