@@ -38,7 +38,8 @@ jobs:
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
       - name: "Commit new file(s) to this repository"
         run: |
-          cd version.firefly-iii.org
+          pwd
+          ls -lah
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add cache/releases.json
