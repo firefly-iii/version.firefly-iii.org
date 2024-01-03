@@ -15,7 +15,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Validate composer.json and composer.lock
         run: composer validate --strict
 
@@ -32,7 +32,10 @@ jobs:
         run: composer install --prefer-dist --no-progress
 
       - name: Run script
-        run: php new-releases.php
+        run: |
+          pwd
+          ls -lah
+          php new-releases.php
         env:
           MASTODON_URL: ${{ secrets.MASTODON_URL }}
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
