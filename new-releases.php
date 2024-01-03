@@ -58,7 +58,7 @@ function updateWebsite(array $information): void
         $log->debug(sprintf('Now processing %s', $key));
         // fallback versions
         $stable = [
-            'version'     => null,
+            'version'     => 'v0.1',
             'date'        => null,
             'from_github' => false,
             'link'        => null,
@@ -68,7 +68,7 @@ function updateWebsite(array $information): void
         ];
 
         $beta = [
-            'version'     => null,
+            'version'     => 'v0.1-beta.0',
             'date'        => null,
             'from_github' => false,
             'link'        => null,
@@ -78,7 +78,7 @@ function updateWebsite(array $information): void
         ];
 
         $alpha = [
-            'version'     => null,
+            'version'     => 'v0.1-alpha.0',
             'date'        => null,
             'from_github' => false,
             'link'        => null,
@@ -88,12 +88,12 @@ function updateWebsite(array $information): void
         ];
         $replacementKey = $replacementKeys[$key];
         foreach ($entries as $release) {
-            $log->debug(sprintf('Now processing %s, version %s', $key, $release['title']));
+            $currentVersion = $release['title'];
+            $log->debug(sprintf('Now processing %s, version %s', $key, $currentVersion));
             $isAlpha = str_contains($release['title'], 'alpha');
             $isBeta  = str_contains($release['title'], 'beta');
             // find stable release in array:
-            if (false === $stable['from_github'] && !$isAlpha && !$isBeta) {
-
+            if (isNewestVersion($currentVersion, $stable['version']) && !$isAlpha && !$isBeta) {
                 $log->debug(sprintf('Found a stable version for %s: %s (%s).', $replacementKey, $release['title'], $release['updated']));
                 $stable['version']     = $release['title'];
                 $stable['date']        = substr($release['updated'], 0, 10);
@@ -103,7 +103,7 @@ function updateWebsite(array $information): void
             }
 
             // set beta if beta not yet set, and the release is a beta, and is not an alpha.
-            if (false === $beta['from_github'] && !$isAlpha && $isBeta) {
+            if (isNewestVersion($currentVersion, $beta['version']) && !$isAlpha && $isBeta) {
                 $log->debug(sprintf('Found a BETA version for %s: %s (%s).', $replacementKey, $release['title'], $release['updated']));
                 $beta['version']     = $release['title'];
                 $beta['date']        = substr($release['updated'], 0, 10);
@@ -112,7 +112,7 @@ function updateWebsite(array $information): void
                 $beta['is_beta']     = true;
             }
             // set alpha is the release is an alpha and the alpha release has not yet been set.
-            if (false === $alpha['from_github'] && $isAlpha && !$isBeta) {
+            if (isNewestVersion($currentVersion, $alpha['version']) && $isAlpha && !$isBeta) {
                 $log->debug(sprintf('Found an ALPHA version for %s: %s (%s).', $replacementKey, $release['title'], $release['updated']));
                 $alpha['version']     = $release['title'];
                 $alpha['date']        = substr($release['updated'], 0, 10);
@@ -186,6 +186,21 @@ function updateWebsite(array $information): void
         ];
     }
     file_put_contents('./site/index.json', json_encode($result, JSON_PRETTY_PRINT));
+}
+
+function isNewestVersion($currentVersion, $previousVersion): bool {
+    global $log;
+    // strip 'v' from the version.
+    if (str_starts_with($currentVersion, 'v')) {
+        $currentVersion = substr($currentVersion, 1);
+    }
+    // strip 'v' from the version.
+    if (str_starts_with($previousVersion, 'v')) {
+        $previousVersion = substr($previousVersion, 1);
+    }
+    $result = version_compare($currentVersion, $previousVersion);
+    $log->debug(sprintf('Compare %s with %s: %d', $currentVersion, $previousVersion, $result));
+    return -1 === $result;
 }
 
 /**
