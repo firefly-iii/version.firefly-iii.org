@@ -200,7 +200,7 @@ function isNewestVersion($currentVersion, $previousVersion): bool {
     }
     $result = version_compare($currentVersion, $previousVersion);
     $log->debug(sprintf('Compare %s with %s: %d', $currentVersion, $previousVersion, $result));
-    return -1 === $result;
+    return 1 === $result;
 }
 
 /**
