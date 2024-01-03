@@ -33,3 +33,6 @@ jobs:
 
       - name: Run script
         run: php new-releases.php
+        env:
+          MASTODON_URL: ${{ secrets.MASTODON_URL }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
