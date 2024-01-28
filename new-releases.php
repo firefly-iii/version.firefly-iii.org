@@ -92,6 +92,14 @@ function updateWebsite(array $information): void
             $log->debug(sprintf('Now processing %s, version %s', $key, $currentVersion));
             $isAlpha = str_contains($release['title'], 'alpha');
             $isBeta  = str_contains($release['title'], 'beta');
+
+            // is develop nightly? Then skip.
+            if (str_contains($release['title'], 'dev-release')) {
+                $log->debug(sprintf('Skipping develop version "%s"', $release['title']));
+                continue;
+            }
+
+
             // find stable release in array:
             if (isNewestVersion($currentVersion, $stable['version']) && !$isAlpha && !$isBeta) {
                 $log->debug(sprintf('Found a stable version for %s: %s (%s).', $replacementKey, $release['title'], $release['updated']));
