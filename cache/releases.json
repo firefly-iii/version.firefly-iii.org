@@ -125,6 +125,13 @@
             "title": "Nightly dev-release 2024-01-29",
             "content": "No content.",
             "announced_mastodon": false
+        },
+        "Nightly dev-release 2024-01-30": {
+            "id": "tag:github.com,2008:Repository\/21298446\/develop-20240130",
+            "updated": "2024-01-30",
+            "title": "Nightly dev-release 2024-01-30",
+            "content": "No content.",
+            "announced_mastodon": false
         }
     },
     "data-importer": {
