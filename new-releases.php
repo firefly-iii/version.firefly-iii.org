@@ -94,11 +94,10 @@ function updateWebsite(array $information): void
             $isBeta  = str_contains($release['title'], 'beta');
 
             // is develop nightly? Then skip.
-            if (str_contains($release['title'], 'dev-release')) {
+            if (str_contains($release['title'], 'release')) {
                 $log->debug(sprintf('Skipping develop version "%s"', $release['title']));
                 continue;
             }
-
 
             // find stable release in array:
             if (isNewestVersion($currentVersion, $stable['version']) && !$isAlpha && !$isBeta) {
