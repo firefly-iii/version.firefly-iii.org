@@ -160,6 +160,13 @@
             "title": "Development release for 2024-02-05",
             "content": "Bi-weekly development release of Firefly III with the latest fixes, translations and features. This release was created on <strong>2024-02-05<\/strong> and may contain bugs. Use at your own risk. Docker users can find this release under the <code>develop<\/code> tag.",
             "announced_mastodon": false
+        },
+        "v6.1.9": {
+            "id": "tag:github.com,2008:Repository\/21298446\/v6.1.9",
+            "updated": "2024-02-05",
+            "title": "v6.1.9",
+            "content": "<h3>Fixed<\/h3>\n<ul>\n<li><a href=\"https:\/\/github.com\/firefly-iii\/firefly-iii\/issues\/8499\" data-hovercard-type=\"issue\" data-hovercard-url=\"\/firefly-iii\/firefly-iii\/issues\/8499\/hovercard\">Issue 8499<\/a> (Wrong version number after update to v6.1.8) reported by <a class=\"user-mention notranslate\" data-hovercard-type=\"user\" data-hovercard-url=\"\/users\/memo-567\/hovercard\" data-octo-click=\"hovercard-link-click\" data-octo-dimensions=\"link_type:self\" href=\"https:\/\/github.com\/memo-567\">@memo-567<\/a><\/li>\n<li><a href=\"https:\/\/github.com\/firefly-iii\/firefly-iii\/issues\/8501\" data-hovercard-type=\"issue\" data-hovercard-url=\"\/firefly-iii\/firefly-iii\/issues\/8501\/hovercard\">Issue 8501<\/a> (Bulk delete page links to wrong tx) reported by <a class=\"user-mention notranslate\" data-hovercard-type=\"user\" data-hovercard-url=\"\/users\/likuilin\/hovercard\" data-octo-click=\"hovercard-link-click\" data-octo-dimensions=\"link_type:self\" href=\"https:\/\/github.com\/likuilin\">@likuilin<\/a><\/li>\n<\/ul>",
+            "announced_mastodon": true
         }
     },
     "data-importer": {
