@@ -300,6 +300,13 @@
             "title": "Development release for 2024-03-26",
             "content": "Bi-weekly development release of Firefly III with the latest fixes, translations and features. This release was created on <strong>2024-03-26<\/strong> and may contain bugs. Use at your own risk. Docker users can find this release under the <code>develop<\/code> tag.",
             "announced_mastodon": false
+        },
+        "Development release for 2024-03-27": {
+            "id": "tag:github.com,2008:Repository\/21298446\/develop-20240327",
+            "updated": "2024-03-27",
+            "title": "Development release for 2024-03-27",
+            "content": "Bi-weekly development release of Firefly III with the latest fixes, translations and features. Docker users can find this release under the <code>develop<\/code> tag.\nThis release was created on <strong>2024-03-27<\/strong> and may contain unexpected bugs. Data loss is rare but is not impossible.\n<ul>\n<li>Please read the installation instructions for <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/docker\/\" rel=\"nofollow\">Docker<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/portainer\/\" rel=\"nofollow\">Portainer<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/kubernetes\/\" rel=\"nofollow\">Kubernetes<\/a> or <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/self-managed\/\" rel=\"nofollow\">self-managed servers<\/a><\/li>\n<li>Or read the upgrade instructions for <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/upgrade\/docker\/\" rel=\"nofollow\">Docker<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/upgrade\/kubernetes\/\" rel=\"nofollow\">Kubernetes<\/a> or <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/upgrade\/self-managed\/\" rel=\"nofollow\">self-managed servers<\/a><\/li>\n<\/ul>\n\u26a0\ufe0f Please be careful with this pre-release, as is may not work as expected.",
+            "announced_mastodon": false
         }
     },
     "data-importer": {
