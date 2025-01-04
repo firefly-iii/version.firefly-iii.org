@@ -1035,6 +1035,69 @@
             "title": "Development release for 2025-01-01",
             "content": "Weekly development release of Firefly III with the latest fixes, translations and features. Docker users can find this release under the <code>develop<\/code> tag.\nThis release was created on <strong>2025-01-01<\/strong> and may contain unexpected bugs. Data loss is rare but is not impossible. The releases are signed, and you can verify them using the <a href=\"https:\/\/docs.firefly-iii.org\/explanation\/more-information\/signatures\/\" rel=\"nofollow\">Firefly III releases PGP key<\/a>.\n<ul>\n<li>Please read the installation instructions for <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/docker\/\" rel=\"nofollow\">Docker<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/portainer\/\" rel=\"nofollow\">Portainer<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/kubernetes\/\" rel=\"nofollow\">Kubernetes<\/a> or <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/self-managed\/\" rel=\"nofollow\">self-managed servers<\/a><\/li>\n<li>Or read the upgrade instructions for <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/upgrade\/docker\/\" rel=\"nofollow\">Docker<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/upgrade\/kubernetes\/\" rel=\"nofollow\">Kubernetes<\/a> or <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/upgrade\/self-managed\/\" rel=\"nofollow\">self-managed servers<\/a><\/li>\n<\/ul>\n\u26a0\ufe0f Please be careful with this pre-release, as it may not work as expected.",
             "announced_mastodon": false
+        },
+        "Development release for 2025-01-03": {
+            "id": "tag:github.com,2008:Repository\/21298446\/develop-20250103",
+            "updated": "2025-01-03",
+            "title": "Development release for 2025-01-03",
+            "content": "Weekly development release of Firefly III with the latest fixes, translations and features. Docker users can find this release under the <code>develop<\/code> tag.\nThis release was created on <strong>2025-01-03<\/strong> and may contain unexpected bugs. Data loss is rare but is not impossible. The releases are signed, and you can verify them using the <a href=\"https:\/\/docs.firefly-iii.org\/explanation\/more-information\/signatures\/\" rel=\"nofollow\">Firefly III releases PGP key<\/a>.\n<ul>\n<li>Please read the installation instructions for <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/docker\/\" rel=\"nofollow\">Docker<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/portainer\/\" rel=\"nofollow\">Portainer<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/kubernetes\/\" rel=\"nofollow\">Kubernetes<\/a> or <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/self-managed\/\" rel=\"nofollow\">self-managed servers<\/a><\/li>\n<li>Or read the upgrade instructions for <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/upgrade\/docker\/\" rel=\"nofollow\">Docker<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/upgrade\/kubernetes\/\" rel=\"nofollow\">Kubernetes<\/a> or <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/upgrade\/self-managed\/\" rel=\"nofollow\">self-managed servers<\/a><\/li>\n<\/ul>\n\u26a0\ufe0f Please be careful with this pre-release, as it may not work as expected.",
+            "announced_mastodon": false
+        },
+        "develop-20250101.1": {
+            "id": "tag:github.com,2008:Repository\/21298446\/develop-20250101.1",
+            "updated": "2025-01-01",
+            "title": "develop-20250101.1",
+            "content": "Development release 'develop' on 2025-01-01",
+            "announced_mastodon": false
+        },
+        "develop-20250101": {
+            "id": "tag:github.com,2008:Repository\/21298446\/develop-20250101",
+            "updated": "2025-01-01",
+            "title": "develop-20250101",
+            "content": "Development release 'develop' on 2025-01-01",
+            "announced_mastodon": false
+        },
+        "develop-20241231": {
+            "id": "tag:github.com,2008:Repository\/21298446\/develop-20241231",
+            "updated": "2024-12-31",
+            "title": "develop-20241231",
+            "content": "Development release 'develop' on 2024-12-31",
+            "announced_mastodon": false
+        },
+        "develop-20241230.1": {
+            "id": "tag:github.com,2008:Repository\/21298446\/develop-20241230.1",
+            "updated": "2024-12-30",
+            "title": "develop-20241230.1",
+            "content": "Development release 'develop' on 2024-12-30",
+            "announced_mastodon": false
+        },
+        "develop-20241230": {
+            "id": "tag:github.com,2008:Repository\/21298446\/develop-20241230",
+            "updated": "2024-12-30",
+            "title": "develop-20241230",
+            "content": "Development release 'develop' on 2024-12-30",
+            "announced_mastodon": false
+        },
+        "develop-20241228.1": {
+            "id": "tag:github.com,2008:Repository\/21298446\/develop-20241228.1",
+            "updated": "2024-12-28",
+            "title": "develop-20241228.1",
+            "content": "Development release 'develop' on 2024-12-28",
+            "announced_mastodon": false
+        },
+        "develop-20241228": {
+            "id": "tag:github.com,2008:Repository\/21298446\/develop-20241228",
+            "updated": "2024-12-28",
+            "title": "develop-20241228",
+            "content": "Development release 'develop' on 2024-12-28",
+            "announced_mastodon": false
+        },
+        "develop-20241227": {
+            "id": "tag:github.com,2008:Repository\/21298446\/develop-20241227",
+            "updated": "2024-12-27",
+            "title": "develop-20241227",
+            "content": "Development release 'develop' on 2024-12-27",
+            "announced_mastodon": false
         }
     },
     "data-importer": {
@@ -1624,6 +1687,69 @@
             "updated": "2024-12-31",
             "title": "Development release for 2024-12-31",
             "content": "Weekly development release of the Firefly III Data Importer with the latest fixes, translations and features. Docker users can find this release under the <code>develop<\/code> tag.\nThis release was created on <strong>2024-12-31<\/strong> and may contain unexpected bugs. Data loss is rare but is not impossible. The releases are signed, and you can verify them using the <a href=\"https:\/\/docs.firefly-iii.org\/explanation\/more-information\/signatures\/\" rel=\"nofollow\">Firefly III releases PGP key<\/a>.\n<ul>\n<li>Please read the installation instructions for <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/data-importer\/installation\/docker\/\" rel=\"nofollow\">Docker<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/data-importer\/installation\/portainer\/\" rel=\"nofollow\">Portainer<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/data-importer\/installation\/kubernetes\/\" rel=\"nofollow\">Kubernetes<\/a> or <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/data-importer\/installation\/self-managed\/\" rel=\"nofollow\">self-managed servers<\/a><\/li>\n<li>Or read the upgrade instructions for <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/data-importer\/upgrade\/docker\/\" rel=\"nofollow\">Docker<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/data-importer\/upgrade\/kubernetes\/\" rel=\"nofollow\">Kubernetes<\/a> or <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/data-importer\/upgrade\/self-managed\/\" rel=\"nofollow\">self-managed servers<\/a><\/li>\n<\/ul>\n\u26a0\ufe0f Please be careful with this pre-release, as it may not work as expected.",
+            "announced_mastodon": false
+        },
+        "develop-20241224": {
+            "id": "tag:github.com,2008:Repository\/430008947\/develop-20241224",
+            "updated": "2024-12-24",
+            "title": "develop-20241224",
+            "content": "Nightly development release 'develop' on 2024-12-24",
+            "announced_mastodon": false
+        },
+        "develop-20241220": {
+            "id": "tag:github.com,2008:Repository\/430008947\/develop-20241220",
+            "updated": "2024-12-20",
+            "title": "develop-20241220",
+            "content": "Nightly development release 'develop' on 2024-12-20",
+            "announced_mastodon": false
+        },
+        "develop-20241217": {
+            "id": "tag:github.com,2008:Repository\/430008947\/develop-20241217",
+            "updated": "2024-12-17",
+            "title": "develop-20241217",
+            "content": "Nightly development release 'develop' on 2024-12-17",
+            "announced_mastodon": false
+        },
+        "develop-20241210": {
+            "id": "tag:github.com,2008:Repository\/430008947\/develop-20241210",
+            "updated": "2024-12-10",
+            "title": "develop-20241210",
+            "content": "Nightly development release 'develop' on 2024-12-10",
+            "announced_mastodon": false
+        },
+        "develop-20241204": {
+            "id": "tag:github.com,2008:Repository\/430008947\/develop-20241204",
+            "updated": "2024-12-04",
+            "title": "develop-20241204",
+            "content": "Nightly development release 'develop' on 2024-12-04",
+            "announced_mastodon": false
+        },
+        "develop-20241129": {
+            "id": "tag:github.com,2008:Repository\/430008947\/develop-20241129",
+            "updated": "2024-11-29",
+            "title": "develop-20241129",
+            "content": "Nightly development release 'develop' on 2024-11-29",
+            "announced_mastodon": false
+        },
+        "develop-20241128": {
+            "id": "tag:github.com,2008:Repository\/430008947\/develop-20241128",
+            "updated": "2024-11-28",
+            "title": "develop-20241128",
+            "content": "Nightly development release 'develop' on 2024-11-28",
+            "announced_mastodon": false
+        },
+        "develop-20241126": {
+            "id": "tag:github.com,2008:Repository\/430008947\/develop-20241126",
+            "updated": "2024-11-26",
+            "title": "develop-20241126",
+            "content": "Nightly development release 'develop' on 2024-11-26",
+            "announced_mastodon": false
+        },
+        "develop-20241125": {
+            "id": "tag:github.com,2008:Repository\/430008947\/develop-20241125",
+            "updated": "2024-11-25",
+            "title": "develop-20241125",
+            "content": "Nightly development release 'develop' on 2024-11-25",
             "announced_mastodon": false
         }
     }
