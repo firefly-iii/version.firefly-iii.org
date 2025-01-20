@@ -19,10 +19,10 @@
             "is_alpha": null
         },
         "alpha": {
-            "version": "v6.2.0-alpha.1",
-            "date": "2024-12-30",
+            "version": "v6.2.0-alpha.2",
+            "date": "2025-01-19",
             "from_github": true,
-            "link": "https:\/\/github.com\/firefly-iii\/firefly-iii\/releases\/tag\/v6.2.0-alpha.1",
+            "link": "https:\/\/github.com\/firefly-iii\/firefly-iii\/releases\/tag\/v6.2.0-alpha.2",
             "is_stable": null,
             "is_beta": null,
             "is_alpha": true
