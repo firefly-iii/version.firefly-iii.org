@@ -17,6 +17,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Update repository
+        run: |
+          cd $GITHUB_WORKSPACE
+          git config user.email "robot@firefly-iii.org"
+          git config user.name "Firefly III build robot"
+          echo $(date '+%d-%m-%Y %T %Z') > date.txt
+          git add date.txt
+          git commit -m "Auto commit on $(date '+%d-%m-%Y') [skip ci]"
+          git push
       - name: Validate composer.json and composer.lock
         run: composer validate --strict
 
@@ -44,7 +53,7 @@ jobs:
           git config user.email github-actions@github.com
           git add cache/releases.json
           git add site/index.json
-          git commit -m "Auto-update for new version" || true
+          git commit -m "Auto-update for new version on $(date '+%d-%m-%Y')" || true
           git push || true
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1

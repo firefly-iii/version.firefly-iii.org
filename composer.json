@@ -3,10 +3,10 @@
     "description": "Something",
     "license": "AGPL-3.0-or-later",
     "require": {
-        "php": ">=8.1",
+        "php": ">=8.4",
         "guzzlehttp/guzzle": "^7.8",
         "monolog/monolog": "^3.5",
-        "nesbot/carbon": "^2.72",
+        "nesbot/carbon": "^3",
         "ext-simplexml": "*"
     }
 }
