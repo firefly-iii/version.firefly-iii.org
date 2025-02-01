@@ -25,7 +25,7 @@ $applications = [
 
 $messages = [
     'firefly-iii'   => "📢 Woohoo! Version #version of Firefly III has just been released 🎉. Check it out over at GitHub, Docker, or download it using your favorite package manager.\n\n#opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/firefly-iii/releases/#version",
-    'data-importer' => "📢 Yay! A new version Firefly III Data Importer has been released. Version #version is out. Check out the release notes and download it today! #opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/data-importer/releases/#version",
+    'data-importer' => "📢 Yay! A new version of the Firefly III Data Importer has been released. Version #version is out. Check out the release notes and download it today! #opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/data-importer/releases/#version",
 ];
 
 $existingFile = __DIR__ . '/cache/releases.json';
