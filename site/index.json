@@ -1,28 +1,28 @@
 {
     "firefly_iii": {
         "stable": {
-            "version": "v6.2.18",
-            "date": "2025-06-20",
+            "version": "v6.2.19",
+            "date": "2025-06-28",
             "from_github": true,
-            "link": "https:\/\/github.com\/firefly-iii\/firefly-iii\/releases\/tag\/v6.2.18",
+            "link": "https:\/\/github.com\/firefly-iii\/firefly-iii\/releases\/tag\/v6.2.19",
             "is_stable": true,
             "is_beta": null,
             "is_alpha": null
         },
         "beta": {
-            "version": "v6.2.18",
-            "date": "2025-06-20",
+            "version": "v6.2.19",
+            "date": "2025-06-28",
             "from_github": true,
-            "link": "https:\/\/github.com\/firefly-iii\/firefly-iii\/releases\/tag\/v6.2.18",
+            "link": "https:\/\/github.com\/firefly-iii\/firefly-iii\/releases\/tag\/v6.2.19",
             "is_stable": true,
             "is_beta": null,
             "is_alpha": null
         },
         "alpha": {
-            "version": "v6.2.18",
-            "date": "2025-06-20",
+            "version": "v6.2.19",
+            "date": "2025-06-28",
             "from_github": true,
-            "link": "https:\/\/github.com\/firefly-iii\/firefly-iii\/releases\/tag\/v6.2.18",
+            "link": "https:\/\/github.com\/firefly-iii\/firefly-iii\/releases\/tag\/v6.2.19",
             "is_stable": true,
             "is_beta": null,
             "is_alpha": null
