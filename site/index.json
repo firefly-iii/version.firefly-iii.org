@@ -30,28 +30,28 @@
     },
     "data": {
         "stable": {
-            "version": "v1.7.6",
-            "date": "2025-07-14",
+            "version": "v1.7.7",
+            "date": "2025-07-16",
             "from_github": true,
-            "link": "https:\/\/github.com\/firefly-iii\/data-importer\/releases\/tag\/v1.7.6",
+            "link": "https:\/\/github.com\/firefly-iii\/data-importer\/releases\/tag\/v1.7.7",
             "is_stable": true,
             "is_beta": null,
             "is_alpha": null
         },
         "beta": {
-            "version": "v1.7.6",
-            "date": "2025-07-14",
+            "version": "v1.7.7",
+            "date": "2025-07-16",
             "from_github": true,
-            "link": "https:\/\/github.com\/firefly-iii\/data-importer\/releases\/tag\/v1.7.6",
+            "link": "https:\/\/github.com\/firefly-iii\/data-importer\/releases\/tag\/v1.7.7",
             "is_stable": true,
             "is_beta": null,
             "is_alpha": null
         },
         "alpha": {
-            "version": "v1.7.6",
-            "date": "2025-07-14",
+            "version": "v1.7.7",
+            "date": "2025-07-16",
             "from_github": true,
-            "link": "https:\/\/github.com\/firefly-iii\/data-importer\/releases\/tag\/v1.7.6",
+            "link": "https:\/\/github.com\/firefly-iii\/data-importer\/releases\/tag\/v1.7.7",
             "is_stable": true,
             "is_beta": null,
             "is_alpha": null
