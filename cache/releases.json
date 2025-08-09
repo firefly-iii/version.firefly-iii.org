@@ -3023,6 +3023,27 @@
             "title": "develop-20250806",
             "content": "\ud83e\udd16 Development release 'develop' on 2025-08-06",
             "announced_mastodon": false
+        },
+        "Development release for 2025-08-08": {
+            "id": "tag:github.com,2008:Repository\/21298446\/develop-20250808.1",
+            "updated": "2025-08-08",
+            "title": "Development release for 2025-08-08",
+            "content": "Weekly development release of Firefly III with the latest fixes, translations and features. Docker users can find this release under the <code>develop<\/code> tag.\nThis release was created on <strong>2025-08-08 21:03<\/strong> and may contain unexpected bugs. Data loss is rare but is not impossible. The releases are signed, and you can verify them using the <a href=\"https:\/\/docs.firefly-iii.org\/explanation\/more-information\/signatures\/\" rel=\"nofollow\">Firefly III releases PGP key<\/a>.\n<ul>\n<li>Please read the installation instructions for <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/docker\/\" rel=\"nofollow\">Docker<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/portainer\/\" rel=\"nofollow\">Portainer<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/kubernetes\/\" rel=\"nofollow\">Kubernetes<\/a> or <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/self-managed\/\" rel=\"nofollow\">self-managed servers<\/a><\/li>\n<li>Or read the upgrade instructions for <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/upgrade\/docker\/\" rel=\"nofollow\">Docker<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/upgrade\/kubernetes\/\" rel=\"nofollow\">Kubernetes<\/a> or <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/upgrade\/self-managed\/\" rel=\"nofollow\">self-managed servers<\/a><\/li>\n<\/ul>\n\u26a0\ufe0f Please be careful with this pre-release, as it may not work as expected.\n<h3>Support Firefly III<\/h3>\nDid you know you can support the development of Firefly III? You can donate in many ways, like GitHub Sponsors or Patreon. For more information, please <a href=\"https:\/\/bit.ly\/donate-to-Firefly-III\" rel=\"nofollow\">follow this link<\/a> for more information.",
+            "announced_mastodon": false
+        },
+        "develop-20250808": {
+            "id": "tag:github.com,2008:Repository\/21298446\/develop-20250808",
+            "updated": "2025-08-08",
+            "title": "develop-20250808",
+            "content": "\ud83e\udd16 Development release 'develop' on 2025-08-08",
+            "announced_mastodon": false
+        },
+        "develop-20250807.5": {
+            "id": "tag:github.com,2008:Repository\/21298446\/develop-20250807.5",
+            "updated": "2025-08-07",
+            "title": "develop-20250807.5",
+            "content": "\ud83e\udd16 Development release 'develop' on 2025-08-07",
+            "announced_mastodon": false
         }
     },
     "data-importer": {
