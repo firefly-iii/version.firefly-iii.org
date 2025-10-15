@@ -6301,6 +6301,13 @@
             "title": "develop-20251012",
             "content": "\ud83e\udd16 Development release 'develop' on 2025-10-12",
             "announced_mastodon": false
+        },
+        "develop-20251013.1": {
+            "id": "tag:github.com,2008:Repository\/430008947\/develop-20251013.1",
+            "updated": "2025-10-13",
+            "title": "develop-20251013.1",
+            "content": "\ud83e\udd16 Development release 'develop' on 2025-10-13",
+            "announced_mastodon": false
         }
     }
 }
