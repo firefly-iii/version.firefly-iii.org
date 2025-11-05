@@ -4185,6 +4185,27 @@
             "title": "develop-20251102",
             "content": "\ud83e\udd16 Development release 'develop' on 2025-11-02",
             "announced_mastodon": false
+        },
+        "Development release for 2025-11-04": {
+            "id": "tag:github.com,2008:Repository\/21298446\/develop-20251104.1",
+            "updated": "2025-11-04",
+            "title": "Development release for 2025-11-04",
+            "content": "Welcome to the latest development release of Firefly III. This test release contains the absolute latest fixes, translations and features. It is probably buggy and may not work as expected. You can download the release below, and adventurous Docker users can find this release under the <code>develop<\/code> tag.\nWarningPlease be careful with this pre-release, as it may not work as expected.\n\nThis release was created on 2025-11-04 @ 05:54 and may contain unexpected bugs. Data loss is rare but possible.\n<h2>Changelog<\/h2>\nThe changelog for this release may not be up-to-date, so it is not included. However, <a href=\"https:\/\/github.com\/firefly-iii\/firefly-iii\/blob\/develop\/changelog.md\">changelog.md<\/a> may already contain entries for the future release.\n<h2>Installation and upgrade instructions<\/h2>\n<ul>\n<li>Please read the installation instructions for <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/docker\/\" rel=\"nofollow\">Docker<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/portainer\/\" rel=\"nofollow\">Portainer<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/kubernetes\/\" rel=\"nofollow\">Kubernetes<\/a> or <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/self-managed\/\" rel=\"nofollow\">self-managed servers<\/a>.<\/li>\n<li>Alternatively, read the upgrade instructions for <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/upgrade\/docker\/\" rel=\"nofollow\">Docker<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/upgrade\/kubernetes\/\" rel=\"nofollow\">Kubernetes<\/a> or <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/upgrade\/self-managed\/\" rel=\"nofollow\">self-managed servers<\/a><\/li>\n<\/ul>\nThe releases are signed, and you can verify them using the <a href=\"https:\/\/docs.firefly-iii.org\/explanation\/more-information\/signatures\/\" rel=\"nofollow\">Firefly III releases PGP key<\/a>.\n<h2>Develop with Firefly III<\/h2>\nAre you interested in (future) API changes to Firefly III, or other interesting dev-related updates? Sign up to the <a href=\"https:\/\/firefly-iii.kit.com\/dev\" rel=\"nofollow\">Firefly III developer newsletter<\/a> to receive low-frequency updates about the development of Firefly III.\n<h2>Support Firefly III<\/h2>\nDid you know you can support the development of Firefly III? You can donate in many ways, like GitHub Sponsors or Patreon. Please <a href=\"https:\/\/bit.ly\/donate-to-Firefly-III\" rel=\"nofollow\">follow this link<\/a> for more information. Thank you for your consideration.",
+            "announced_mastodon": false
+        },
+        "develop-20251104": {
+            "id": "tag:github.com,2008:Repository\/21298446\/develop-20251104",
+            "updated": "2025-11-04",
+            "title": "develop-20251104",
+            "content": "\ud83e\udd16 Development release 'develop' on 2025-11-04",
+            "announced_mastodon": false
+        },
+        "develop-20251103.3": {
+            "id": "tag:github.com,2008:Repository\/21298446\/develop-20251103.3",
+            "updated": "2025-11-03",
+            "title": "develop-20251103.3",
+            "content": "\ud83e\udd16 Development release 'develop' on 2025-11-03",
+            "announced_mastodon": false
         }
     },
     "data-importer": {
@@ -6629,6 +6650,13 @@
             "updated": "2025-11-04",
             "title": "Development release for 2025-11-04",
             "content": "Welcome to the latest development of the Firefly III data importer. This <strong>development<\/strong> release contains the latest fixes and features. It is probably buggy and may not work as expected. You can download the release below, and adventurous Docker users can find this release under the <code>develop<\/code> tag.\nWarningSome changes in this release may unexpectedly lead to duplicate transactions. This is caused by changes in the data handling routines. This is unfortunate, but a result of new insights, changed APIs and other minor fixes. My apologies for any inconvenience. I try to avoid these kinds of changes, but it can't always be helped.\n\nDevelopment releases are created to test new features and fixes before they are included in a stable release. They are not recommended for production use. This release was created on 2025-11-04 @ 04:40 and may contain unexpected bugs. Data loss is rare but possible.\n<h2>Changelog<\/h2>\nThe changelog for this release may not be up-to-date, so it is not included. However, <a href=\"https:\/\/github.com\/firefly-iii\/data-importer\/blob\/develop\/changelog.md\">changelog.md<\/a> may already contain entries for the future release.\n<h2>Installation and upgrade instructions<\/h2>\n<ul>\n<li>Please read the installation instructions for <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/docker\/\" rel=\"nofollow\">Docker<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/portainer\/\" rel=\"nofollow\">Portainer<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/kubernetes\/\" rel=\"nofollow\">Kubernetes<\/a> or <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/installation\/self-managed\/\" rel=\"nofollow\">self-managed servers<\/a><\/li>\n<li>Or read the upgrade instructions for <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/upgrade\/docker\/\" rel=\"nofollow\">Docker<\/a>, <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/upgrade\/kubernetes\/\" rel=\"nofollow\">Kubernetes<\/a> or <a href=\"https:\/\/docs.firefly-iii.org\/how-to\/firefly-iii\/upgrade\/self-managed\/\" rel=\"nofollow\">self-managed servers<\/a><\/li>\n<\/ul>\nThe release files are signed, and you can verify them using the <a href=\"https:\/\/docs.firefly-iii.org\/explanation\/more-information\/signatures\/\" rel=\"nofollow\">Firefly III releases PGP key<\/a>.\n<h2>Develop with Firefly III<\/h2>\nAre you interested in (future) API changes to Firefly III, or other interesting dev-related updates? Sign up to the <a href=\"https:\/\/firefly-iii.kit.com\/dev\" rel=\"nofollow\">Firefly III developer newsletter<\/a> to receive low-frequency updates about the development of Firefly III.\n<h2>Support Firefly III<\/h2>\nDid you know you can support the development of Firefly III? You can donate in many ways, like GitHub Sponsors or Patreon. Please <a href=\"https:\/\/bit.ly\/donate-to-Firefly-III\" rel=\"nofollow\">follow this link<\/a> for more information. Thank you for your consideration.",
+            "announced_mastodon": false
+        },
+        "develop-20251101.1": {
+            "id": "tag:github.com,2008:Repository\/430008947\/develop-20251101.1",
+            "updated": "2025-11-01",
+            "title": "develop-20251101.1",
+            "content": "\ud83e\udd16 Development release 'develop' on 2025-11-01",
             "announced_mastodon": false
         }
     }
