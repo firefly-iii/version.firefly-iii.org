@@ -7603,6 +7603,13 @@
             "title": "develop-20260105",
             "content": "\ud83e\udd16 Development release 'develop' on 2026-01-05",
             "announced_mastodon": false
+        },
+        "develop-20260106.2": {
+            "id": "tag:github.com,2008:Repository\/430008947\/develop-20260106.2",
+            "updated": "2026-01-06",
+            "title": "develop-20260106.2",
+            "content": "\ud83e\udd16 Development release 'develop' on 2026-01-06",
+            "announced_mastodon": false
         }
     }
 }
