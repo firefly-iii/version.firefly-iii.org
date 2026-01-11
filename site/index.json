@@ -30,28 +30,28 @@
     },
     "data": {
         "stable": {
-            "version": "v2.0.3",
-            "date": "2026-01-10",
+            "version": "v2.0.4",
+            "date": "2026-01-11",
             "from_github": true,
-            "link": "https:\/\/github.com\/firefly-iii\/data-importer\/releases\/tag\/v2.0.3",
+            "link": "https:\/\/github.com\/firefly-iii\/data-importer\/releases\/tag\/v2.0.4",
             "is_stable": true,
             "is_beta": null,
             "is_alpha": null
         },
         "beta": {
-            "version": "v2.0.3",
-            "date": "2026-01-10",
+            "version": "v2.0.4",
+            "date": "2026-01-11",
             "from_github": true,
-            "link": "https:\/\/github.com\/firefly-iii\/data-importer\/releases\/tag\/v2.0.3",
+            "link": "https:\/\/github.com\/firefly-iii\/data-importer\/releases\/tag\/v2.0.4",
             "is_stable": true,
             "is_beta": null,
             "is_alpha": null
         },
         "alpha": {
-            "version": "v2.0.3",
-            "date": "2026-01-10",
+            "version": "v2.0.4",
+            "date": "2026-01-11",
             "from_github": true,
-            "link": "https:\/\/github.com\/firefly-iii\/data-importer\/releases\/tag\/v2.0.3",
+            "link": "https:\/\/github.com\/firefly-iii\/data-importer\/releases\/tag\/v2.0.4",
             "is_stable": true,
             "is_beta": null,
             "is_alpha": null
