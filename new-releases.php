@@ -24,8 +24,20 @@ $applications = [
 ];
 
 $messages = [
-    'firefly-iii'   => "📢 Woohoo! Version #version of Firefly III has just been released 🎉. Check it out over at GitHub, Docker, or download it using your favorite package manager.\n\n#opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/firefly-iii/releases/#version",
-    'data-importer' => "📢 Yay! A new version of the Firefly III Data Importer has been released. Version #version is out. Check out the release notes and download it today! #opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/data-importer/releases/#version",
+    //'firefly-iii'   => "📢 Woohoo! Version #version of Firefly III has just been released 🎉. Check it out over at GitHub, Docker, or download it using your favorite package manager.\n\n#opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/firefly-iii/releases/#version",
+    //'data-importer' => "📢 Yay! A new version of the Firefly III Data Importer has been released. Version #version is out. Check out the release notes and download it today! #opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/data-importer/releases/#version",
+
+    'firefly-iii'   =>
+        [
+            "📢 Woohoo! Version #version of Firefly III has just been released! 🎉\n\nFirefly III is a free and open source personal finance manager. Check it out over at GitHub, Docker, or download it using your favorite package manager.\n\n#opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/firefly-iii/releases/#version",
+            "📢 Alright, announcing version #version of Firefly III! 🎉\n\nFirefly III is a free and open source personal finance manager. Check it out over at GitHub, Docker, or download it using your favorite package manager.\n\n#opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/firefly-iii/releases/#version",
+            "📢 The moment you've all been waiting for. Version #version of Firefly III is out! 🎉\n\nFirefly III is a free and open source personal finance manager. Check it out over at GitHub, Docker, or download it using your favorite package manager.\n\n#opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/firefly-iii/releases/#version",
+        ],
+    'data-importer' =>
+        [
+            "📢 A new version Firefly III Data Importer has been released. Version #version is out.\n\nFirefly III is a free and open source personal finance manager, and the data importer can download transactions directly from your bank!\n\nCheck out the release notes and download. https://github.com/firefly-iii/data-importer/releases/#version #opensource #oss #newrelease #php #software #personalfinance #selfhosted",
+            "📢 Here we go, a version of the Firefly III Data Importer is out! Version #version can be downloaded right now.\n\nFirefly III is a free and open source personal finance manager, and the data importer can download transactions directly from your bank!\n\nCheck out the release notes and download. https://github.com/firefly-iii/data-importer/releases/#version #opensource #oss #newrelease #php #software #personalfinance #selfhosted",
+        ],
 ];
 
 $existingFile = __DIR__ . '/cache/releases.json';
@@ -53,7 +65,7 @@ function updateWebsite(array $information): void
         'firefly_iii' => 'https://github.com/firefly-iii/firefly-iii/releases/tag/%s',
         'data'        => 'https://github.com/firefly-iii/data-importer/releases/tag/%s',
     ];
-    $result = [];
+    $result          = [];
     foreach ($information as $key => $entries) {
         $log->debug(sprintf('Now processing %s', $key));
         // fallback versions
@@ -77,7 +89,7 @@ function updateWebsite(array $information): void
             'is_alpha'    => null,
         ];
 
-        $alpha = [
+        $alpha          = [
             'version'     => 'v0.1-alpha.0',
             'date'        => null,
             'from_github' => false,
@@ -151,37 +163,37 @@ function updateWebsite(array $information): void
 
         // overrule beta with stable if stable is newer (and released after beta).
         if (null !== $stable['version'] && 1 === version_compare($stable['version'], $beta['version']) && $dateStable->gte($dateBeta)) {
-        $log->info(
-            sprintf(
-                'Stable version %s (%s) is newer than beta version %s (%s), so stable version %s is now also beta version of %s.',
-                $stable['version'], $dateStable->format('Y-m-d'),
-                $beta['version'], $dateBeta->format('Y-m-d'),
-                $stable['version'], $replacementKey
-            )
-        );
+            $log->info(
+                sprintf(
+                    'Stable version %s (%s) is newer than beta version %s (%s), so stable version %s is now also beta version of %s.',
+                    $stable['version'], $dateStable->format('Y-m-d'),
+                    $beta['version'], $dateBeta->format('Y-m-d'),
+                    $stable['version'], $replacementKey
+                )
+            );
             $beta     = $stable;
             $dateBeta = clone $dateStable;
         }
-    $log->debug(
-        sprintf(
-            'Compare beta (%s) with alpha (%s): %d',
-            $beta['version'], $alpha['version'], version_compare((string) $beta['version'], (string) $alpha['version'])
-        )
-    );
-    $log->debug(sprintf('beta date: %s', $dateBeta->toW3cString()));
-    $log->debug(sprintf('alpha date: %s', $dateAlpha->toW3cString()));
-    $log->debug(sprintf('Date compare beta greaterThanOrEqualTo alpha: %s', var_export($dateBeta->gte($dateAlpha), true)));
-
-        // overrule alpha with beta, if beta is newer (and released after alpha):
-        if (1 === version_compare((string) $beta['version'], (string) $alpha['version']) && $dateBeta->gte($dateAlpha)) {
-        $log->info(
+        $log->debug(
             sprintf(
-                'Beta version %s (%s) is newer than alpha version %s (%s), so %s is now alpha version of %s.',
-                $beta['version'], $dateBeta->format('Y-m-d'),
-                $alpha['version'], $dateAlpha->format('Y-m-d'),
-                $beta['version'], $replacementKey
+                'Compare beta (%s) with alpha (%s): %d',
+                $beta['version'], $alpha['version'], version_compare((string)$beta['version'], (string)$alpha['version'])
             )
         );
+        $log->debug(sprintf('beta date: %s', $dateBeta->toW3cString()));
+        $log->debug(sprintf('alpha date: %s', $dateAlpha->toW3cString()));
+        $log->debug(sprintf('Date compare beta greaterThanOrEqualTo alpha: %s', var_export($dateBeta->gte($dateAlpha), true)));
+
+        // overrule alpha with beta, if beta is newer (and released after alpha):
+        if (1 === version_compare((string)$beta['version'], (string)$alpha['version']) && $dateBeta->gte($dateAlpha)) {
+            $log->info(
+                sprintf(
+                    'Beta version %s (%s) is newer than alpha version %s (%s), so %s is now alpha version of %s.',
+                    $beta['version'], $dateBeta->format('Y-m-d'),
+                    $alpha['version'], $dateAlpha->format('Y-m-d'),
+                    $beta['version'], $replacementKey
+                )
+            );
             $alpha     = $beta;
             $dateAlpha = clone $dateBeta;
         }
@@ -195,7 +207,8 @@ function updateWebsite(array $information): void
     file_put_contents('./site/index.json', json_encode($result, JSON_PRETTY_PRINT));
 }
 
-function isNewestVersion($currentVersion, $previousVersion): bool {
+function isNewestVersion($currentVersion, $previousVersion): bool
+{
     global $log;
     // strip 'v' from the version.
     if (str_starts_with($currentVersion, 'v')) {
@@ -234,7 +247,7 @@ function processApplication(array $information, string $application, string $url
 
         return [];
     }
-    $body = (string) $response->getBody();
+    $body = (string)$response->getBody();
     return processApplicationBody($information, $application, $body);
 }
 
@@ -257,15 +270,15 @@ function processApplicationBody(array $information, string $application, string 
     }
     if (isset($releaseXml->entry)) {
         foreach ($releaseXml->entry as $entry) {
-            $title   = (string) $entry->title;
-            $content = (string) $entry->content;
+            $title   = (string)$entry->title;
+            $content = (string)$entry->content;
 
             // remove HTML tags (g-emoji)
             $content = strip_tags($content, ['h3', 'ul', 'li', 'a', 'strong', 'code', 'h2']);
 
             $array = [
-                'id'                 => (string) $entry->id,
-                'updated'            => substr((string) $entry->updated, 0, 10),
+                'id'                 => (string)$entry->id,
+                'updated'            => substr((string)$entry->updated, 0, 10),
                 'title'              => $title,
                 'content'            => $content,
                 'announced_mastodon' => false,
@@ -411,8 +424,8 @@ function postNewVersion(array $information, string $application, string $version
 function announceMastodon(string $application, array $info): void
 {
     global $log, $messages;
-    $url   = (string) getenv('MASTODON_URL');
-    $token = (string) getenv('MASTODON_TOKEN');
+    $url   = (string)getenv('MASTODON_URL');
+    $token = (string)getenv('MASTODON_TOKEN');
     if ('' === $url) {
         $log->error('No MASTODON_URL found in environment.');
         exit;
@@ -421,9 +434,9 @@ function announceMastodon(string $application, array $info): void
         $log->error('No MASTODON_TOKEN found in environment.');
         exit;
     }
-
-    $toot = (string) $messages[$application];
-    $toot = str_replace('#version', $info['title'], $toot);
+    $toots = $messages[$application];
+    $toot  = (string)$toots[rand(0, count($toots) - 1)];
+    $toot  = str_replace('#version', $info['title'], $toot);
 
     // post it manually:
     $full   = sprintf('%s/api/v1/statuses', $url);
@@ -439,7 +452,7 @@ function announceMastodon(string $application, array $info): void
     ];
 
     $res  = $client->post($full, $options);
-    $body = (string) $res->getBody();
+    $body = (string)$res->getBody();
     $json = json_decode($body, true);
 //    $json = ['url' => 'fake'];
 
