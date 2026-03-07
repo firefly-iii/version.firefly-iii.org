@@ -342,6 +342,12 @@ function postOnMastodon(array $information): void
 
             continue;
         }
+        // skip develop versions
+        if (str_contains($newestVersion, 'dev')) {
+            $log->debug(sprintf('Skip version %s', $newestVersion));
+
+            continue;
+        }
 
         $result = postNewVersion($information, $application, $newestVersion);
 
