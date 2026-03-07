@@ -107,6 +107,10 @@ function updateWebsite(array $information): void
                 $log->debug(sprintf('Skipping develop version "%s"', $release['title']));
                 continue;
             }
+            if (str_contains($release['title'], 'deve')) {
+                $log->debug(sprintf('Skipping develop version "%s"', $release['title']));
+                continue;
+            }
 
             // find stable release in array:
             if (isNewestVersion($currentVersion, $stable['version']) && !$isAlpha && !$isBeta) {
