@@ -19,24 +19,21 @@ $handler->setFormatter(new LineFormatter(null, null, true, true));
 $log->pushHandler($handler);
 
 $applications = [
-    'firefly-iii'   => 'https://github.com/firefly-iii/firefly-iii/releases.atom',
-    'data-importer' => 'https://github.com/firefly-iii/data-importer/releases.atom',
+    'firefly-iii'   => 'https://api.github.com/repos/firefly-iii/firefly-iii/releases',
+    'data-importer' => 'https://api.github.com/repos/firefly-iii/data-importer/releases',
 ];
 
 $messages = [
-    //'firefly-iii'   => "📢 Woohoo! Version #version of Firefly III has just been released 🎉. Check it out over at GitHub, Docker, or download it using your favorite package manager.\n\n#opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/firefly-iii/releases/#version",
-    //'data-importer' => "📢 Yay! A new version of the Firefly III Data Importer has been released. Version #version is out. Check out the release notes and download it today! #opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/data-importer/releases/#version",
-
     'firefly-iii'   =>
         [
-            "📢 Woohoo! Version #version of Firefly III has just been released! 🎉\n\nFirefly III is a free and open source personal finance manager. Check it out over at GitHub, Docker, or download it using your favorite package manager.\n\n#opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/firefly-iii/releases/#version",
-            "📢 Alright, announcing version #version of Firefly III! 🎉\n\nFirefly III is a free and open source personal finance manager. Check it out over at GitHub, Docker, or download it using your favorite package manager.\n\n#opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/firefly-iii/releases/#version",
-            "📢 The moment you've all been waiting for. Version #version of Firefly III is out! 🎉\n\nFirefly III is a free and open source personal finance manager. Check it out over at GitHub, Docker, or download it using your favorite package manager.\n\n#opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/firefly-iii/releases/#version",
+            "📢 Woohoo! Version #version of Firefly III has just been released! 🎉\n\nFirefly III is a free and open source personal finance manager.\n\n#summaryCheck it out over at GitHub, Docker, or download it using your favorite package manager. #opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/firefly-iii/releases/#version",
+            "📢 Alright, announcing version #version of Firefly III! 🎉\n\nFirefly III is a free and open source personal finance manager.\n\n#summaryCheck it out over at GitHub, Docker, or download it using your favorite package manager.\n\n#opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/firefly-iii/releases/#version",
+            "📢 The moment you've all been waiting for. Version #version of Firefly III is out! 🎉\n\nFirefly III is a free and open source personal finance manager.\n\n#summaryCheck it out over at GitHub, Docker, or download it using your favorite package manager.\n\n#opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/firefly-iii/releases/#version",
         ],
     'data-importer' =>
         [
-            "📢 A new version Firefly III Data Importer has been released. Version #version is out.\n\nFirefly III is a free and open source personal finance manager, and the data importer can download transactions directly from your bank!\n\nCheck out the release notes and download. https://github.com/firefly-iii/data-importer/releases/#version #opensource #oss #newrelease #php #software #personalfinance #selfhosted",
-            "📢 Here we go, a version of the Firefly III Data Importer is out! Version #version can be downloaded right now.\n\nFirefly III is a free and open source personal finance manager, and the data importer can download transactions directly from your bank!\n\nCheck out the release notes and download. https://github.com/firefly-iii/data-importer/releases/#version #opensource #oss #newrelease #php #software #personalfinance #selfhosted",
+            "📢 A new version Firefly III Data Importer has been released. Version #version is out.\n\nFirefly III is a free and open source personal finance manager, and the data importer can download transactions directly from your bank!\n\n#summaryCheck out the release notes and download. https://github.com/firefly-iii/data-importer/releases/#version #opensource #oss #newrelease #php #software #personalfinance #selfhosted",
+            "📢 Here we go, a version of the Firefly III Data Importer is out! Version #version can be downloaded right now.\n\nFirefly III is a free and open source personal finance manager, and the data importer can download transactions directly from your bank!\n\n#summaryCheck out the release notes and download. https://github.com/firefly-iii/data-importer/releases/#version #opensource #oss #newrelease #php #software #personalfinance #selfhosted",
         ],
 ];
 
@@ -261,35 +258,29 @@ function processApplication(array $information, string $application, string $url
 function processApplicationBody(array $information, string $application, string $body): array
 {
     global $log;
-    try {
-        $releaseXml = new \SimpleXMLElement($body, LIBXML_NOCDATA);
-    } catch (\Exception $e) {
-        $log->error($e->getMessage());
+    if (!json_validate($body)) {
+        $log->error(json_last_error_msg());
 
         return [];
     }
-    if (isset($releaseXml->entry)) {
-        foreach ($releaseXml->entry as $entry) {
-            $title   = (string)$entry->title;
-            $content = (string)$entry->content;
+    $body = json_decode($body, true);
+    foreach ($body as $entry) {
+        $title   = (string)$entry['name'];
+        $content = (string)$entry['body'];
 
-            // remove HTML tags (g-emoji)
-            $content = strip_tags($content, ['h3', 'ul', 'li', 'a', 'strong', 'code', 'h2']);
-
-            $array = [
-                'id'                 => (string)$entry->id,
-                'updated'            => substr((string)$entry->updated, 0, 10),
-                'title'              => $title,
-                'content'            => $content,
-                'announced_mastodon' => false,
-            ];
-            if (!array_key_exists($application, $information)) {
-                $information[$application] = [];
-            }
-            if (!array_key_exists($title, $information[$application])) {
-                $information[$application][$title] = $array;
-                $log->info(sprintf('Learned of new %s version %s', $application, $title));
-            }
+        $array = [
+            'id'                 => (string)$entry['id'],
+            'updated'            => substr($entry['updated_at'], 0, 10),
+            'title'              => $title,
+            'content'            => $content,
+            'announced_mastodon' => false,
+        ];
+        if (!array_key_exists($application, $information)) {
+            $information[$application] = [];
+        }
+        if (!array_key_exists($title, $information[$application])) {
+            $information[$application][$title] = $array;
+            $log->info(sprintf('Learned of new %s version %s', $application, $title));
         }
     }
     return $information[$application];
@@ -436,7 +427,11 @@ function announceMastodon(string $application, array $info): void
     }
     $toots = $messages[$application];
     $toot  = (string)$toots[rand(0, count($toots) - 1)];
-    $toot  = str_replace('#version', $info['title'], $toot);
+
+    // extract summary:
+    $summary = extractSummary($info['content']);
+    $toot = str_replace('#version', $info['title'], $toot);
+    $toot = str_replace('#summary', $summary, $toot);
 
     // post it manually:
     $full   = sprintf('%s/api/v1/statuses', $url);
@@ -450,11 +445,24 @@ function announceMastodon(string $application, array $info): void
             'status' => $toot,
         ],
     ];
-
     $res  = $client->post($full, $options);
     $body = (string)$res->getBody();
     $json = json_decode($body, true);
-//    $json = ['url' => 'fake'];
 
     $log->info(sprintf('Posted on Mastodon! %s', $json['url']));
 }
+
+function extractSummary(string $content): string
+{
+    if (!str_contains($content, '<!-- summary:')) {
+        return '';
+    }
+    $lines = explode("\n", $content);
+    foreach ($lines as $line) {
+        if (str_starts_with($line, '<!-- summary:')) {
+            return trim(str_replace(['<!-- summary:', '-->'], '', $line))."\n\n";
+        }
+    }
+    return '';
+}
+
