@@ -26,15 +26,28 @@ $applications = [
 $messages = [
     'firefly-iii'   =>
         [
-            "📢 Woohoo! Version #version of Firefly III has just been released! 🎉\n\nFirefly III is a free and open source personal finance manager.\n\n#summaryCheck it out over at GitHub, Docker, or download it using your favorite package manager. #opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/firefly-iii/releases/#version",
-            "📢 Alright, announcing version #version of Firefly III! 🎉\n\nFirefly III is a free and open source personal finance manager.\n\n#summaryCheck it out over at GitHub, Docker, or download it using your favorite package manager.\n\n#opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/firefly-iii/releases/#version",
-            "📢 The moment you've all been waiting for. Version #version of Firefly III is out! 🎉\n\nFirefly III is a free and open source personal finance manager.\n\n#summaryCheck it out over at GitHub, Docker, or download it using your favorite package manager.\n\n#opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/firefly-iii/releases/#version",
+            "📢 Woohoo! Version #version of Firefly III has just been released! 🎉\n\n#explanation#summaryCheck it out over at GitHub, Docker, or download it using your favorite package manager. #opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/firefly-iii/releases/#version",
+            "📢 Alright, announcing version #version of Firefly III! 🎉\n\n#explanation#summaryCheck it out over at GitHub, Docker, or download it using your favorite package manager.\n\n#opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/firefly-iii/releases/#version",
+            "📢 The moment you've all been waiting for. Version #version of Firefly III is out! 🎉\n\n#explanation#summaryCheck it out over at GitHub, Docker, or download it using your favorite package manager.\n\n#opensource #oss #newrelease #php #software #personalfinance #selfhosted \n\n https://github.com/firefly-iii/firefly-iii/releases/#version",
         ],
     'data-importer' =>
         [
-            "📢 A new version Firefly III Data Importer has been released. Version #version is out.\n\nFirefly III is a free and open source personal finance manager, and the data importer can download transactions directly from your bank!\n\n#summaryCheck out the release notes and download. https://github.com/firefly-iii/data-importer/releases/#version #opensource #oss #newrelease #php #software #personalfinance #selfhosted",
-            "📢 Here we go, a version of the Firefly III Data Importer is out! Version #version can be downloaded right now.\n\nFirefly III is a free and open source personal finance manager, and the data importer can download transactions directly from your bank!\n\n#summaryCheck out the release notes and download. https://github.com/firefly-iii/data-importer/releases/#version #opensource #oss #newrelease #php #software #personalfinance #selfhosted",
+            "📢 A new version Firefly III Data Importer has been released. Version #version is out.\n\n#explanation#summaryCheck out the release notes and download. https://github.com/firefly-iii/data-importer/releases/#version #opensource #oss #newrelease #php #software #personalfinance #selfhosted",
+            "📢 Here we go, a version of the Firefly III Data Importer is out! Version #version can be downloaded right now.\n\n#explanation#summaryCheck out the release notes and download. https://github.com/firefly-iii/data-importer/releases/#version #opensource #oss #newrelease #php #software #personalfinance #selfhosted",
         ],
+];
+
+$explanations = [
+    'firefly-iii'   => [
+        'Firefly III is a free and open source personal finance manager with comprehensive reporting features',
+        'Firefly III is a free and open source personal finance manager with great budgeting options.',
+        'Firefly III is a free and open source personal finance manager with amazing transaction organisation tools.',
+    ],
+    'data-importer' => [
+        'Firefly III is a free and open source personal finance manager, and the data importer can download transactions directly from your bank!',
+        'The Firefly III data importer allows you to download transactions directly from your bank into Firefly III, a free and open source personal finance manager.',
+        'Firefly III is a free and open source personal finance manager, and the data importer helps you to automate your financial routines.',
+    ],
 ];
 
 $existingFile = __DIR__ . '/cache/releases.json';
@@ -435,13 +448,16 @@ function announceMastodon(string $application, array $info): void
         $log->error('No MASTODON_TOKEN found in environment.');
         exit;
     }
-    $toots = $messages[$application];
-    $toot  = (string)$toots[rand(0, count($toots) - 1)];
+    $toot        = getMessage($application);
+    $explanation = getExplanation($application);
 
-    // extract summary:
+    // extract and replace summary:
     $summary = extractSummary($info['content']);
+    $toot    = str_replace('#summary', $summary, $toot);
+
+    // replace version and explanation.
     $toot = str_replace('#version', $info['title'], $toot);
-    $toot = str_replace('#summary', $summary, $toot);
+    $toot = str_replace('#explanation', $explanation, $toot);
 
     // post it manually:
     $full   = sprintf('%s/api/v1/statuses', $url);
@@ -455,12 +471,28 @@ function announceMastodon(string $application, array $info): void
             'status' => $toot,
         ],
     ];
-    $res  = $client->post($full, $options);
-    $body = (string)$res->getBody();
-    $json = json_decode($body, true);
+    $res     = $client->post($full, $options);
+    $body    = (string)$res->getBody();
+    $json    = json_decode($body, true);
 
     $log->info(sprintf('Posted on Mastodon! %s', $json['url']));
 }
+
+function getExplanation(string $application): string
+{
+    global $explanations;
+    $set = $explanations[$application];
+    return ($set[rand(0, count($set) - 1)] ?? '') . PHP_EOL . PHP_EOL;
+}
+
+
+function getMessage(string $application): string
+{
+    global $messages;
+    $set = $messages[$application];
+    return $set[rand(0, count($set) - 1)] ?? '';
+}
+
 
 function extractSummary(string $content): string
 {
@@ -470,7 +502,7 @@ function extractSummary(string $content): string
     $lines = explode("\n", $content);
     foreach ($lines as $line) {
         if (str_starts_with($line, '<!-- summary:')) {
-            return trim(str_replace(['<!-- summary:', '-->'], '', $line))."\n\n";
+            return trim(str_replace(['<!-- summary:', '-->'], '', $line)) . "\n\n";
         }
     }
     return '';
