@@ -60,9 +60,9 @@ jobs:
           git commit -m "Auto-update for new version on $(date '+%d-%m-%Y')" || true
           git push || true
       - name: Publish to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v6
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: aaf8eef9dd565a13de210d18c7462092
           projectName: version
-          directory: site
+          workingDirectory: site
