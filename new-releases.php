@@ -314,7 +314,7 @@ function readExistingFile(string $existingFile): array
     }
     $content = file_get_contents($existingFile);
     if (false !== json_decode($content)) {
-        $log->debug('Found valid JSON, return it.');
+        $log->debug('Found valid JSON file, return it.');
         return json_decode($content, true);
     }
     $log->warning(sprintf('File "%s" contains invalid JSON. Recreate it and return [].', $existingFile));
@@ -345,10 +345,10 @@ function postOnMastodon(array $information): void
     foreach ($information as $application => $versions) {
         $log->debug(sprintf('Know of %d %s versions.', count($versions), $application));
         $newestVersion = getNewestVersion($versions);
-        $log->debug(sprintf('Newest version is %s', $newestVersion));
+        $log->debug(sprintf('Newest version is "%s"', $newestVersion));
 
         if (!array_key_exists($newestVersion, $versions)) {
-            $log->error(sprintf('Unexpected cant find version %s', $newestVersion));
+            $log->error(sprintf('Unexpected can\'t find version %s', $newestVersion));
 
             return;
         }
@@ -419,9 +419,10 @@ function postNewVersion(array $information, string $application, string $version
 {
     global $log;
     $array     = $information[$application][$version];
+
     $announced = $array['announced_mastodon'] ?? false;
     if (false === $announced) {
-        $log->debug(sprintf('Going to announce %s %s on Mastodon.', $application, $version));
+        $log->debug(sprintf('Going to announce %s %s on Mastodon.', $application, $version), $array);
         announceMastodon($application, $array);
 
         return true;
