@@ -57,6 +57,10 @@ $result = [];
 foreach ($applications as $application => $url) {
     $log->debug(sprintf('Now looking for new releases of "%s" at "%s"', $application, $url));
     $information[$application] = processApplication($information, $application, $url);
+    if(0 === count($information[$application])) {
+        $log->warning(sprintf('No releases found for "%s" at "%s"', $application, $url));
+        exit(1);
+    }
 }
 
 saveFile($existingFile, $information);
@@ -248,9 +252,15 @@ function processApplication(array $information, string $application, string $url
 {
     global $log;
     $client = new Client();
-
+    $opts = [
+        'headers' => [
+            'Accept'     => 'application/vnd.github.v3+json',
+            'User-Agent' => 'firefly-iii-release-bot',
+            'Authorization' => 'Bearer ' . getenv('VERSION_TOKEN')
+        ],
+    ];
     try {
-        $response = $client->request('GET', $url);
+        $response = $client->request('GET', $url, $opts);
     } catch (GuzzleException $e) {
         $log->error(sprintf('Response for %s is %s.', $url, $e->getMessage()));
 
