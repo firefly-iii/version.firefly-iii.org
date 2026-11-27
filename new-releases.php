@@ -256,7 +256,7 @@ function processApplication(array $information, string $application, string $url
         'headers' => [
             'Accept'     => 'application/vnd.github.v3+json',
             'User-Agent' => 'firefly-iii-release-bot',
-            'Authorization' => 'Bearer ' . getenv('VERSION_TOKEN')
+            'Authorization' => 'Bearer ' . getenv('GH_TOKEN')
         ],
     ];
     try {
